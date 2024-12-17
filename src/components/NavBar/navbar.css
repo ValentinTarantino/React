@@ -1,4 +1,4 @@
-.navbar{
+.navbar {
     width: 100%;
     height: 120px;
     display: flex;
@@ -11,28 +11,41 @@
     margin-top: 2.9rem;
     font-size: 1.5rem;
     position: relative;
-    right: 19rem;
+    left: -45rem;
+    color: aliceblue;
     font-family: 'Times New Roman', Times, serif;
 }
 
 .logo {
     position: relative;
-    right: 6rem;
+    left: -14rem;
 }
 
-.componentes{
+.componentes {
     font-size: 1.4rem;
     display: flex;
     gap: 1.5rem;
-    position: relative;
+    position: absolute;
     top: 2.8rem;
-    right: 15.5rem;
+    right: 39.1rem;
+    color: aliceblue;
 }
 
-.carrito{
+.carrito {
     width: 30px;
     height: 40px;
     position: relative;
     top: 30px;
     right: 50px;
+}
+
+
+.category {
+    color: white;
+    text-decoration: none;
+}
+
+.category-active {
+    color: rgb(58, 140, 248);
+    text-decoration: underline;
 }
