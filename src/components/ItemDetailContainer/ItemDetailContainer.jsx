@@ -1,38 +1,57 @@
-import { useState, useEffect } from "react"
-import ItemDetail from "./Itemdetail"
-import { getProductos } from "../../data/data.js"
-import { useParams } from "react-router-dom"
-import Cargando from "../ItemListContainer/Cargando.jsx"
-
-
-
+import { useState, useEffect } from "react";
+import ItemDetail from "./ItemDetail";
+import { doc, getDoc } from "firebase/firestore";
+import db from "../../db/db.js";
+import { useParams, useNavigate } from "react-router-dom";
+import Cargando from "../ItemListContainer/Cargando.jsx";
 
 
 const ItemDetailContainer = () => {
-    const [producto, setProducto] = useState({})
+    const [producto, setProducto] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(false);
 
+    const { idProduct } = useParams();
+    const navigate = useNavigate();
 
-    const { idProduct } = useParams()
+    const getProducto = async () => {
+        try {
+            const docRef = doc(db, "products", idProduct);
+            const dataDb = await getDoc(docRef);
+
+            if (dataDb.exists()) {
+                const data = { id: dataDb.id, ...dataDb.data() };
+                setProducto(data);
+                setLoading(false);
+            } else {
+                setError(true);
+                setLoading(false);
+            }
+        } catch (error) {
+            console.log(error);
+            setError(true);
+            setLoading(false);
+        }
+    };
 
     useEffect(() => {
-        setLoading(true)
+        getProducto();
+    }, [idProduct]);
 
-        getProductos()
-            .then((data) => {
-                const productoFind = data.find((dataProducto) => dataProducto.id === idProduct)
-                setProducto(productoFind)
-            })
-            .catch((error) => console.log(error)) 
-            .finally( () => setLoading(false))
-    }, [idProduct])
-
-    return (
-        <>
-    {
-        loading  ?  <Cargando />  : <ItemDetail  producto={producto} />
+    if (loading) {
+        return <Cargando />;
     }
-        </>
-    )
-}
-export default ItemDetailContainer
+
+    if (error) {
+        return (
+            <div className="error">
+                <h2>Producto no encontrado</h2>
+                <button onClick={() => navigate("/")}>Volver al inicio</button>
+            </div>
+        );
+    }
+
+    return producto ? <ItemDetail producto={producto} /> : null;
+};
+
+export default ItemDetailContainer;

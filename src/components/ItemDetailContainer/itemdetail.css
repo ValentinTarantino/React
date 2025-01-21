@@ -50,3 +50,32 @@
     font-size: 1.3rem;
     color: rgb(0, 0, 0);
 }
+
+.finish{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0px;
+    color: rgb(15, 139, 25);
+    cursor: pointer;
+}
+.error {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    text-align: center;
+}
+
+.error h2 {
+    font-size: 24px;
+    color: red;
+}
+
+.error button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}

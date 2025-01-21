@@ -1,3 +1,5 @@
+import db from "../db/db.js";
+import { collection, addDoc } from "firebase/firestore";
 
 const productos = [
     {
@@ -74,12 +76,17 @@ const productos = [
     },
 ]
 
-const getProductos = () => {
-    return new Promise( (resolve, reject) => {
-        setTimeout(()=>{
-            resolve(productos)
-        }, 2000)
-    })
-}
+const seedProducts = async () => {
+try {
+    const productsRef = collection(db, "products");
+    productos.map(async ({ id, ...dataProduct }) => {
+    await addDoc(productsRef, dataProduct);
+    });
 
-export { getProductos }
+    console.log("¡Productos añadidos con exito!");
+} catch (error) {
+    console.log(error);
+}
+};
+
+seedProducts();
