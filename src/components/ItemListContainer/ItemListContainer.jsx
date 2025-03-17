@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./itemListContainer.css";
+import "./itemlistContainer.css";
 import Itemlist from "./Itemlist.jsx";
 import { useParams } from "react-router-dom";
 import Cargando from "./Cargando.jsx";
