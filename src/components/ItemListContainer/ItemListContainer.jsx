@@ -37,7 +37,7 @@ const ItemListContainer = ({ greeting }) => {
     };
 
     useEffect(() => {
-        setLoading(true); // Establecer loading en true al cambiar la categoría
+        setLoading(true); 
         fetchProductos();
     }, [idCategory]);
 
