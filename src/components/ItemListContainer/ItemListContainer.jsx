@@ -6,7 +6,7 @@ import Cargando from "./Cargando.jsx";
 import db from "../../db/db.js";
 import { collection, getDocs, query, where } from "firebase/firestore"
 
-const ItemListContainer = ({ greeting }) => {
+const ItemListContainer = ({ }) => {
     const [productos, setProductos] = useState([]);
     const [loading, setLoading] = useState(true);
     const { idCategory } = useParams();
@@ -43,7 +43,6 @@ const ItemListContainer = ({ greeting }) => {
 
     return (
         <div className="ItemListContainer">
-            <h1>{greeting}</h1>
             {loading ? <Cargando /> : <Itemlist productos={productos} />}
         </div>
     );

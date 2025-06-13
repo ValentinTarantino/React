@@ -1,0 +1,28 @@
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+    max-width: 1550px;      
+    margin: -4rem auto;     
+}
+
+.banner .slick-slider {
+    width: 100%;
+}
+
+.banner img {
+    width: 100%;
+    max-height: 800px;     
+    border-radius: 10px;
+    object-fit: cover; 
+    display: block;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 1618px) {
+    .banner img {
+        width: 90%;
+    }
+    
+}

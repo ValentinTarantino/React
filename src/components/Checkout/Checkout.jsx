@@ -5,11 +5,13 @@ import db from '../../db/db.js';
 import FormCheckout from './FormCheckout';
 import { CartContext } from '../../context/CartContext';
 import './checkout.css';
+import Cargando from '../ItemListContainer/Cargando'; // importa tu loader
 
 const Checkout = () => {
     const [dataForm, setDataForm] = useState({ fullname: '', phone: '', email: '', confirmEmail: '' });
     const [orderId, setOrderId] = useState(null);
     const [error, setError] = useState('');
+    const [loading, setLoading] = useState(false); // estado de carga
     const { cart, deleteCart } = useContext(CartContext);
 
     const handleChangeInput = (e) => {
@@ -43,7 +45,9 @@ const Checkout = () => {
             date: Timestamp.fromDate(new Date())
         };
 
+        setLoading(true); // empieza a cargar
         await uploadOrder(order);
+        setLoading(false); // termina de cargar
     };
 
     const uploadOrder = async (newOrder) => {
@@ -51,11 +55,15 @@ const Checkout = () => {
             const ordersRef = collection(db, 'orders');
             const response = await addDoc(ordersRef, newOrder);
             setOrderId(response.id);
-            deleteCart(); // Vaciar el carrito después de completar la compra
+            deleteCart(); 
         } catch (error) {
             console.log(error);
         }
     };
+
+    if (loading) {
+        return <Cargando />;
+    }
 
     return (
         <div className="checkout">

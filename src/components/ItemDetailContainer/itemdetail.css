@@ -1,8 +1,10 @@
+
 .item-detail {
+    min-height: 100vh;
     display: flex;
-    width: 100%;
-    min-height: 90vh;
-    padding: 100px 0;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
 }
 
 .images-detail-container {
@@ -21,6 +23,7 @@
     width: 40%;
     margin: 10px 0;
     border-radius: 5px;
+    
 
 }
 
@@ -46,8 +49,10 @@
 }
 
 .text-detail {
-    padding: 10px 0;
-    font-size: 1.3rem;
+    padding: 20px 0;
+    padding-right: 200px;
+    font-size: 1.2rem;
+    line-height: 1.5;
     color: rgb(0, 0, 0);
 }
 
@@ -78,4 +83,123 @@
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
+}
+
+.lupa-container {
+    position: relative;
+    overflow: hidden;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.lupa-img {
+    width: 100%;
+    border-radius: 5px;
+    transition: opacity 0.2s;
+    cursor: zoom-in;
+    display: block;
+}
+
+.lupa-zoom {
+    position: absolute;
+    pointer-events: none;
+    border-radius: 50%;
+    border: 2px solid #011d50;
+    width: 280px;
+    height: 280px;
+    background-repeat: no-repeat;
+    background-size: 200% 200%;
+    display: none;
+    z-index: 10;
+}
+
+.precio-verde {
+    color: #1bb51b;
+    font-weight: bold;
+}
+.precio-label {
+    color: #000000;
+    font-weight: bold;
+}
+.precio-valor {
+    color: #28c401;
+    font-weight: bold;
+}
+
+
+@media screen and (max-width: 1618px) {
+.title-detail {
+    font-size: 2.2rem;
+    padding-top: 6rem;
+
+}
+}
+
+
+@media screen and (max-width: 1280px) {
+    .text-detail-container {
+        font-size: 0.5rem;
+    }
+
+    .text-detail {
+        padding-right: 3rem;
+    }
+        .finish {
+            font-size: 1rem;
+        }
+    }
+
+@media screen and (max-width: 1024px){
+    .text-detail{
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .title-detail {
+        font-size: 1.8rem;
+    }
+
+    .text-detail {
+        font-size: 0.9rem;
+        padding-right: 0;
+    }
+    
+}
+
+@media screen and (max-width: 480px) {
+    .images-detail-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .images-detail-container .secondary-images {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .images-detail-container .main-image {
+        width: 100%;
+    }
+
+    .text-detail-container {
+        width: 100%;
+        padding: 0;
+    }
+
+    .title-detail {
+        font-size: 1.5rem;
+    }
+
+    .text-detail {
+        font-size: 0.8rem;
+        padding-right: 40px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+        .text-detail {
+        font-size: 0.8rem;
+        padding-right: 30px;
+    }
 }

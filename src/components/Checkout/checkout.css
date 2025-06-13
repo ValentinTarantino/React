@@ -7,7 +7,10 @@
     font-size: 25px;
 }
 
-/* Estilos para el formulario de checkout */
+.checkout > div {
+    text-align: center;
+}
+
 .form-checkout {
     display: flex;
     flex-direction: column;
@@ -54,8 +57,7 @@
 }
 
 .button-to-home {
-    margin: 20px 0;
-    width: 300px;
+    margin: 20px auto 0 auto; 
     height: 40px;
     display: flex;
     justify-content: center;
@@ -65,6 +67,7 @@
     border-radius: 5px;
     color: rgb(177, 177, 177);
     font-size: 20px;
+    cursor: pointer;
 }
 
 .error {
@@ -78,4 +81,11 @@
 .no-spinner::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
+}
+
+
+@media screen and (max-width: 1618px){
+    .checkout {
+        padding-top: 12rem;
+    }
 }

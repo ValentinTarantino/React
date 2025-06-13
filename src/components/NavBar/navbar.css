@@ -1,3 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+.navbar,
+.navbar * {
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+}
+
+
+.hamburger-menu {
+    display: none;
+    font-size: 2.5rem;
+    cursor: pointer;
+    z-index: 1100;
+    position: absolute;
+    left: 2rem;
+    top: 1.5rem;
+    background: none;
+    border: none;
+    color: #fff;
+    padding: 0.2em 0.5em;
+    outline: none;
+    box-shadow: none;
+    width: auto;
+    height: auto;
+    line-height: 1;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+
 .navbar {
     width: 100%;
     height: 120px;
@@ -5,15 +38,20 @@
     background-color: rgb(0, 5, 20);
     justify-content: space-around;
     color: aliceblue;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
 .tiTulo {
     margin-top: 2.9rem;
-    font-size: 1.5rem;
+    font-size: 2.2rem;
     position: relative;
     left: -45rem;
+    font-weight: bold;
     color: aliceblue;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'VT323', monospace;
 }
 
 .logo {
@@ -23,6 +61,7 @@
 
 .componentes {
     font-size: 1.4rem;
+    font-family: 'VT323', monospace;
     display: flex;
     gap: 1.5rem;
     position: absolute;
@@ -50,6 +89,372 @@
     text-decoration: underline;
 }
 
-.number-cartwidget{
+.number-cartwidget {
     color: white;
+}
+
+
+@media screen and (max-width: 1618px) {
+    .navbar {
+        width: 100%;
+    }
+
+    .componentes {
+        top: 2.8rem;
+        right: 30rem;
+        gap: 1.5rem;
+    }
+
+    .tiTulo {
+        left: -38rem;
+    }
+
+    .logo {
+        left: -12rem;
+    }
+}
+
+@media screen and (max-width: 1550px) {
+    .componentes {
+        right: 29rem;
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .logo {
+        left: -11rem;
+    }
+
+    .tiTulo {
+        left: -36rem;
+        font-size: 1.4rem;
+    }
+
+    .componentes {
+        top: 2.8rem;
+        right: 29rem;
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .logo {
+        left: -10rem;
+    }
+
+    .tiTulo {
+        left: -33rem;
+        font-size: 2rem;
+    }
+
+    .componentes {
+        right: 28rem;
+        font-size: 1.2rem;
+    }
+
+
+    .carrito {
+        left: 3rem;
+    }
+
+    .number-cartwidget {
+        position: relative;
+        left: 6.2rem;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .componentes {
+        top: 2.8rem;
+        right: 27.5rem;
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 1366px) {
+
+    .logo {
+        left: -9rem;
+    }
+
+    .tiTulo {
+        left: -30rem;
+    }
+
+    .componentes {
+        top: 2.8rem;
+        right: 25rem;
+        font-size: 1.1rem;
+    }
+
+    .carrito {
+        left: 3rem;
+    }
+
+    .number-cartwidget {
+        position: relative;
+        left: 6.2rem;
+    }
+
+}
+
+@media screen and (max-width: 1280px) {
+    .navbar {
+        height: 100px;
+    }
+
+    .logo {
+        left: -10rem;
+    }
+
+    .tiTulo {
+        left: -30rem;
+        top: -0.4rem;
+    }
+
+    .componentes {
+        top: 2.8rem;
+        right: 23.5rem;
+        font-size: 1.1rem;
+    }
+
+    .carrito {
+        left: 3rem;
+    }
+
+    .number-cartwidget {
+        position: relative;
+        left: 6.2rem;
+    }
+}
+
+
+@media screen and (max-width: 1200px) {
+    .logo {
+        left: -9rem;
+    }
+
+    .tiTulo {
+        left: -28rem;
+        top: -0.4rem;
+    }
+
+    .componentes {
+        top: 2.8rem;
+        right: 20.6rem;
+        font-size: 1.1rem;
+    }
+
+    .carrito {
+        left: 3rem;
+    }
+
+    .number-cartwidget {
+        position: relative;
+        left: 6.2rem;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .logo {
+        left: -7rem;
+    }
+
+    .tiTulo {
+        left: -23rem;
+        font-size: 1.7rem;
+    }
+
+    .componentes {
+        top: 2.8rem;
+        right: 18rem;
+        font-size: 0.9rem;
+    }
+
+    .carrito {
+        left: 3rem;
+    }
+
+    .number-cartwidget {
+        position: relative;
+        left: 6.2rem;
+    }
+
+}
+
+
+@media screen and (max-width: 992px) {
+
+    .logo {
+        left: -7rem;
+    }
+
+    .tiTulo {
+        left: -23rem;
+        font-size: 1.8rem;
+    }
+
+    .componentes {
+        right: 17rem;
+        font-size: 0.9rem;
+    }
+
+    .carrito {
+        left: 3rem;
+    }
+
+    .number-cartwidget {
+        position: relative;
+        left: 6.2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .logo {
+        left: 5.5rem;
+    }
+
+    .tiTulo {
+        left: -2.4rem;
+        top: -0.8rem;
+        font-size: 2.3rem;
+    }
+
+    .componentes {
+        display: none;
+    }
+
+    .carrito {
+        left: -9.2rem;
+    }
+
+    .number-cartwidget {
+        left: -6.5rem;
+    }
+
+    .hamburger-menu {
+        display: block;
+        font-size: 2.5rem;
+        cursor: pointer;
+        z-index: 1100;
+        position: absolute;
+        left: 2rem;
+        top: 1.5rem;
+        background: none;
+        border: none;
+        color: #fff;
+        padding: 0.2em 0.5em;
+        outline: none;
+        box-shadow: none;
+        width: auto;
+        height: auto;
+        line-height: 1;
+    }
+
+    .hamburger-menu:focus {
+        outline: none;
+        box-shadow: none;
+    }
+
+    .mobile-menu {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 2rem;
+        width: 70vw;
+        max-width: 320px;
+        background: #222;
+        gap: 1.5rem;
+        padding: 2rem 1rem;
+        z-index: 100;
+        border-radius: 0 2rem 10px 10px;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-30px) scaleY(0.95);
+        transition: opacity 0.3s, transform 0.3s;
+    }
+
+    .mobile-menu.open {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0) scaleY(1);
+    }
+
+    .mobile-menu a {
+        color: #fff;
+        font-size: 1.2rem;
+        text-decoration: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .logo {
+        left: 2rem;
+    }
+
+    .tiTulo {
+        left: -2.1rem;
+        font-size: 2rem;
+        top: -0.7rem;
+    }
+
+    .carrito {
+        left: -4.5rem;
+    }
+
+    .number-cartwidget {
+        left: -1rem;
+    }
+
+    .hamburger-menu {
+        left: 0.6rem;
+        top: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .logo {
+        left: 1.6rem;
+    }
+
+    .tiTulo {
+        left: -2.1rem;
+        font-size: 2rem;
+        top: -0.7rem;
+    }
+
+    .carrito {
+        left: -4.2rem;
+    }
+
+    .number-cartwidget {
+        left: -1rem;
+    }
+
+    .hamburger-menu {
+        left: 0.3rem;
+        top: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 410px) {
+    .tiTulo {
+        left: -2.1rem;
+        font-size: 1.8rem;
+        top: -0.7rem;
+    }
+
+    .carrito {
+        left: -4rem;
+    }
+
+    .number-cartwidget {
+        left: -1rem;
+    }
+
+    .hamburger-menu {
+        left: 0.3rem;
+        top: 1.2rem;
+    }
 }

@@ -1,9 +1,30 @@
 .footer {
-    background-color: #333;
+    background-color: #262c46;
     color: white;
     text-align: center;
     padding: 10px 0;
     position: fixed;
     width: 100%;
     bottom: 0;
+}
+
+@media screen and (max-width: 368px) {
+    .footer {
+        font-size: 0.75rem;
+    }
+    
+}
+
+@media screen and (max-width: 456px) {
+    .footer {
+        font-size: 0.9rem;
+    }
+    
+}
+
+
+@media screen and (max-width: 410px) {
+    .footer {
+        font-size: 0.8rem;
+    }
 }
